@@ -1,0 +1,1858 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>itext.pdf2data</name>
+    </assembly>
+    <members>
+        <member name="T:iText.Pdf2Data.Actions.Data.Pdf2DataProductData">
+            <summary>
+            Stores an instance of
+            <see cref="T:iText.Commons.Actions.Data.ProductData"/>
+            related to pdf2Data module.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Actions.Data.Pdf2DataProductData.GetInstance">
+            <summary>
+            Getter for an instance of
+            <see cref="T:iText.Commons.Actions.Data.ProductData"/>
+            related to pdf2Data module.
+            </summary>
+            <returns>pdf2Data product description</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Actions.Events.Pdf2DataProductEvent">
+            <summary>Class represents events registered in pdf2Data module.</summary>
+        </member>
+        <member name="F:iText.Pdf2Data.Actions.Events.Pdf2DataProductEvent.RECOGNIZE_PDF">
+            <summary>Recognize pdf event type.</summary>
+        </member>
+        <member name="F:iText.Pdf2Data.Actions.Events.Pdf2DataProductEvent.PARSE_TEMPLATE">
+            <summary>Parse template event type.</summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Actions.Events.Pdf2DataProductEvent.#ctor(iText.Commons.Actions.Sequence.SequenceId,iText.Commons.Actions.Contexts.IMetaInfo,System.String,iText.Commons.Actions.Confirmations.EventConfirmationType)">
+            <summary>Creates an event associated with a general identifier and additional meta data.</summary>
+            <param name="sequenceId">is an identifier associated with the event</param>
+            <param name="metaInfo">is an additional meta info</param>
+            <param name="eventType">is a string description of the event</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Actions.Events.Pdf2DataProductEvent.CreateRecognizePdfEvent(iText.Commons.Actions.Sequence.SequenceId,iText.Commons.Actions.Contexts.IMetaInfo)">
+            <summary>Creates a recognize-pdf event which is associated with a general identifier and additional meta data.
+                </summary>
+            <param name="sequenceId">is an identifier associated with the event</param>
+            <param name="metaInfo">is an additional meta info</param>
+            <returns>the recognize-pdf event</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Actions.Events.Pdf2DataProductEvent.CreateParseTemplateEvent(iText.Commons.Actions.Sequence.SequenceId,iText.Commons.Actions.Contexts.IMetaInfo)">
+            <summary>Creates a recognize-pdf event which is associated with a general identifier and additional meta data.
+                </summary>
+            <param name="sequenceId">is an identifier associated with the event</param>
+            <param name="metaInfo">is an additional meta info</param>
+            <returns>the recognize-pdf event</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Detector.ParagraphFinder.GetSmartAverageSpace(System.Single[],System.Int32,System.Int32,System.Boolean)">
+            <summary>For columns return mean of spaces between columns.</summary>
+            <remarks>
+            For columns return mean of spaces between columns.
+            Return -1 if between low ccord and top coord only one block of text.
+            </remarks>
+            <param name="freqArr">Array with frequencies for any coord.</param>
+            <param name="low">Low threshold.</param>
+            <param name="top">Top threshold.</param>
+            <param name="isYArray">True if y-coord is considered.</param>
+            <returns/>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.AlignSelectorDTO">
+            <summary>
+            Class which represents
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.AlignSelector"/>
+            in json format.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.AlignSelectorDTO.#ctor(System.Nullable{iText.Pdf2Data.Dto.Json.Selectors.Enums.AlignFilter},System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            Constructs new
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.AlignSelectorDTO"/>
+            with passed parameters.
+            </summary>
+            <param name="alignFilter">defines which align to use</param>
+            <param name="left">left align boundary</param>
+            <param name="right">right align boundary</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.AlignSelectorDTO.GetAlignFilter">
+            <summary>Gets which align is used.</summary>
+            <returns>align which used</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.AlignSelectorDTO.GetLeft">
+            <summary>Gets left align boundary.</summary>
+            <returns>left align boundary</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.AlignSelectorDTO.GetRight">
+            <summary>Gets right align boundary.</summary>
+            <returns>right align boundary</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.BarcodeSelectorDTO">
+            <summary>
+            Class which represents
+            <see cref="T:iText.Pdf2Data.Selector.Impl.BarcodeSelector"/>
+            in json format.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.BarcodeSelectorDTO.#ctor(System.Nullable{iText.Pdf2Data.Dto.Json.Selectors.Enums.BarcodeFormat},iText.Pdf2Data.Dto.Json.Templates.RectangleDTO)">
+            <summary>
+            Constructs new
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.BarcodeSelectorDTO"/>
+            with passed parameters.
+            </summary>
+            <param name="format">barcode format to match</param>
+            <param name="barcodeLocation">location of barcode selector</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.BarcodeSelectorDTO.GetFormat">
+            <summary>Gets barcode format to match.</summary>
+            <returns>barcode format to match</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.BarcodeSelectorDTO.GetBarcodeLocation">
+            <summary>Gets location of barcode selector.</summary>
+            <returns>location of barcode selector</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.BoundarySelectorDTO">
+            <summary>
+            Class which represents
+            <see cref="T:iText.Pdf2Data.Selector.Impl.BoundarySelector"/>
+            in json format.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.BoundarySelectorDTO.#ctor(System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},iText.Pdf2Data.Dto.Json.Templates.RectangleDTO)">
+            <summary>
+            Constructs new
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.BoundarySelectorDTO"/>
+            with passed fields.
+            </summary>
+            <param name="topUsed">
+            
+            <see langword="true"/>
+            if top boundary used,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <param name="bottomUsed">
+            
+            <see langword="true"/>
+            if bottom boundary used,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <param name="leftUsed">
+            
+            <see langword="true"/>
+            if left boundary used,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <param name="rightUsed">
+            
+            <see langword="true"/>
+            if right boundary used,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <param name="area">location of selector</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.BoundarySelectorDTO.GetTopUsed">
+            <summary>Gets is top boundary used.</summary>
+            <returns>
+            
+            <see langword="true"/>
+            if used,
+            <see langword="false"/>
+            otherwise
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.BoundarySelectorDTO.GetBottomUsed">
+            <summary>Gets is bottom boundary used.</summary>
+            <returns>
+            
+            <see langword="true"/>
+            if used,
+            <see langword="false"/>
+            otherwise
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.BoundarySelectorDTO.GetRightUsed">
+            <summary>Gets is right boundary used.</summary>
+            <returns>
+            
+            <see langword="true"/>
+            if used,
+            <see langword="false"/>
+            otherwise
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.BoundarySelectorDTO.GetLeftUsed">
+            <summary>Gets is left boundary used.</summary>
+            <returns>
+            
+            <see langword="true"/>
+            if used,
+            <see langword="false"/>
+            otherwise
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.BoundarySelectorDTO.GetArea">
+            <summary>Gets location of selector.</summary>
+            <returns>selector location</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.Enums.AlignFilter">
+            <summary>
+            Enumeration of possible align filters supported in
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.AlignSelectorDTO"/>.
+            </summary>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.Enums.BarcodeFormat">
+            <summary>
+            Enumeration of possible barcode formats supported in
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.BarcodeSelectorDTO"/>.
+            </summary>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.Enums.CharSpacing">
+            <summary>
+            Enumeration of possible char spacing supported in
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.LineSelectorDTO"/>.
+            </summary>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.Enums.FontStyles">
+            <summary>
+            Enumeration of possible font styles supported in
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.FontStyleSelectorDTO"/>.
+            </summary>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.Enums.LineSpacing">
+            <summary>
+            Enumeration of possible line spacing supported in
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.ParagraphSelectorDTO"/>.
+            </summary>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.Enums.Side">
+            <summary>
+            Enumeration of possible side for relation supported in
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.RelativeBoundarySelectorDTO"/>.
+            </summary>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.FontColorSelectorDTO">
+            <summary>
+            Class which represents
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.FontColorSelector"/>
+            in json format.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.FontColorSelectorDTO.#ctor(System.String,System.Nullable{System.Double})">
+            <summary>
+            Constructs new
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.FontColorSelectorDTO"/>
+            with passed parameters.
+            </summary>
+            <param name="color">color of selector</param>
+            <param name="tolerance">tolerance of selector</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.FontColorSelectorDTO.GetColor">
+            <summary>Gets color of selector.</summary>
+            <returns>selector color</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.FontColorSelectorDTO.GetTolerance">
+            <summary>Gets tolerance of selector.</summary>
+            <returns>selector tolerance</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.FontFamilySelectorDTO">
+            <summary>
+            Class which represents
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.FontNameSelector"/>
+            in json format.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.FontFamilySelectorDTO.#ctor(System.String)">
+            <summary>
+            Constructs new
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.FontFamilySelectorDTO"/>
+            with passed parameter.
+            </summary>
+            <param name="fontName">font name of selector</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.FontFamilySelectorDTO.GetFontName">
+            <summary>Gets font name of selector.</summary>
+            <returns>selector font name</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.FontStyleSelectorDTO">
+            <summary>
+            Class which represents
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.FontStyleSelector"/>
+            in json format.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.FontStyleSelectorDTO.#ctor(System.Collections.Generic.IList{System.Nullable{iText.Pdf2Data.Dto.Json.Selectors.Enums.FontStyles}})">
+            <summary>
+            Constructs new
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.FontStyleSelectorDTO"/>
+            with passed parameter.
+            </summary>
+            <param name="styles">font styles list to select</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.FontStyleSelectorDTO.GetStyles">
+            <summary>Gets font styles list to select.</summary>
+            <returns>font style list to select</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.GroupSelectorDTO">
+            <summary>
+            Class which represents
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Postprocessing.GroupSelector"/>
+            in json format.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.GroupSelectorDTO.#ctor(System.String)">
+            <summary>
+            Constructs new
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.GroupSelectorDTO"/>
+            with passed parameter.
+            </summary>
+            <param name="parentName">name of parent group</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.GroupSelectorDTO.GetParentName">
+            <summary>Gets name of parent group.</summary>
+            <returns>parent group name</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.LineSelectorDTO">
+            <summary>
+            Class which represents
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Group.LineGrouper"/>
+            in json format.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.LineSelectorDTO.#ctor(System.Nullable{iText.Pdf2Data.Dto.Json.Selectors.Enums.CharSpacing})">
+            <summary>
+            Constructs new
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.LineSelectorDTO"/>
+            with passed parameter.
+            </summary>
+            <param name="charSpacing">line spacing coefficient</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.LineSelectorDTO.GetCharSpacing">
+            <summary>Gets line spacing coefficient.</summary>
+            <returns>line spacing coefficient</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.ParagraphSelectorDTO">
+            <summary>
+            Class which represents
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Group.ParagraphGrouper"/>
+            in json format.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.ParagraphSelectorDTO.#ctor(System.Nullable{iText.Pdf2Data.Dto.Json.Selectors.Enums.LineSpacing},System.String)">
+            <summary>
+            Constructs new
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.ParagraphSelectorDTO"/>
+            with passed parameters.
+            </summary>
+            <param name="lineSpacing">line spacing coefficient</param>
+            <param name="paragraphName">paragraph name</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.ParagraphSelectorDTO.GetLineSpacing">
+            <summary>Gets line spacing coefficient.</summary>
+            <returns>line spacing coefficient</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.ParagraphSelectorDTO.GetParagraphName">
+            <summary>Gets paragraph name.</summary>
+            <returns>paragraph name</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.DateSelectorDTO">
+            <summary>
+            Class which represents
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.Special.Impl.DateSelector"/>
+            in json
+            format.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.Patterns.DateSelectorDTO.#ctor(System.String,System.String)">
+            <summary>
+            Constructs new
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.DateSelectorDTO"/>
+            with passed parameters.
+            </summary>
+            <param name="pattern">date pattern to use</param>
+            <param name="evaluatedPattern">evaluated pattern to be used in processing</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.Patterns.DateSelectorDTO.GetPattern">
+            <summary>Gets date pattern that is used.</summary>
+            <returns>date pattern that is used</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.IBANSelectorDTO">
+            <summary>
+            Class which represents
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.Special.Impl.IBANSelector"/>
+            in json
+            format.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.Patterns.IBANSelectorDTO.#ctor(System.String)">
+            <summary>
+            Constructs new
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.IBANSelectorDTO"/>
+            with passed parameter.
+            </summary>
+            <param name="evaluatedPattern">pattern to use</param>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.IntegerSelectorDTO">
+            <summary>
+            Class which represents
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.Special.Impl.IntegerSelector"/>
+            in json
+            format.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.Patterns.IntegerSelectorDTO.#ctor(System.String)">
+            <summary>
+            Constructs new
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.IntegerSelectorDTO"/>
+            with passed parameter.
+            </summary>
+            <param name="evaluatedPattern">pattern to use</param>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.PatternSelectorDTO">
+            <summary>
+            Class which represents
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.SimpleRESelector"/>
+            in json format.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.Patterns.PatternSelectorDTO.#ctor(System.String,System.String,iText.Pdf2Data.Dto.Json.Selectors.Patterns.SimplePatternSelectorDTO)">
+            <summary>
+            Constructs new
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.PatternSelectorDTO"/>
+            with passed parameters.
+            </summary>
+            <param name="prefix">pattern prefix</param>
+            <param name="suffix">pattern suffix</param>
+            <param name="innerBasePattern">pattern middle part</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.Patterns.PatternSelectorDTO.GetPrefix">
+            <summary>Gets pattern prefix.</summary>
+            <returns>pattern prefix</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.Patterns.PatternSelectorDTO.GetSuffix">
+            <summary>Gets pattern suffix.</summary>
+            <returns>pattern suffix</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.Patterns.PatternSelectorDTO.GetInnerBasePattern">
+            <summary>Gets pattern middle part.</summary>
+            <returns>pattern middle part</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.PriceSelectorDTO">
+            <summary>
+            Class which represents
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.Special.Impl.PriceSelector"/>
+            in json
+            format.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.Patterns.PriceSelectorDTO.#ctor(System.String)">
+            <summary>
+            Constructs new
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.PriceSelectorDTO"/>
+            with passed parameter.
+            </summary>
+            <param name="evaluatedPattern">pattern to use</param>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.RegExpSelectorDTO">
+            <summary>
+            Class which represents
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.RegExpSelector"/>
+            in json format.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.Patterns.RegExpSelectorDTO.#ctor(System.Collections.Generic.IList{System.String},System.Nullable{System.Boolean},System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            Constructs new
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.RegExpSelectorDTO"/>
+            with passed parameters.
+            </summary>
+            <param name="patterns">list of patterns to match</param>
+            <param name="fit">
+            defines whether the patterns should be auto-evaluated. Should be
+            <see langword="false"/>
+            or missing
+            for processed selector
+            </param>
+            <param name="selectLine">line index to select, shall be less than patterns size</param>
+            <param name="checkLocation">
+            
+            <see langword="true"/>
+            if check location should be applied,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <param name="leftThreshold">location left threshold</param>
+            <param name="rightThreshold">location right threshold</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.Patterns.RegExpSelectorDTO.GetPatterns">
+            <summary>Gets list of patterns to match.</summary>
+            <returns>patterns list</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.Patterns.RegExpSelectorDTO.GetFit">
+            <summary>Gets, whether the patterns should be auto-evaluated.</summary>
+            <returns>
+            
+            <see langword="false"/>
+            if patterns should be auto-evaluated,
+            <see langword="true"/>
+            otherwise
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.Patterns.RegExpSelectorDTO.GetSelectLine">
+            <summary>Gets line index to select.</summary>
+            <returns>line index to select</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.Patterns.RegExpSelectorDTO.GetCheckLocation">
+            <summary>Gets, whether the check location should be applied.</summary>
+            <returns>
+            
+            <see langword="true"/>
+            if check location should be applied,
+            <see langword="false"/>
+            otherwise
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.Patterns.RegExpSelectorDTO.GetLeftThreshold">
+            <summary>Gets location left threshold.</summary>
+            <returns>location left threshold</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.Patterns.RegExpSelectorDTO.GetRightThreshold">
+            <summary>Gets location right threshold.</summary>
+            <returns>location right threshold</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.SimplePatternSelectorDTO">
+            <summary>Parent class for simple pattern based selectors.</summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.Patterns.SimplePatternSelectorDTO.#ctor(System.String,System.String)">
+            <summary>Constructor which used in successors for setting selector type and pattern that will be used.</summary>
+            <param name="selectorType">type of selector</param>
+            <param name="evaluatedPattern">pattern to use</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.Patterns.SimplePatternSelectorDTO.GetEvaluatedPattern">
+            <summary>Gets pattern that is used.</summary>
+            <returns>pattern that is used</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.TimeSelectorDTO">
+            <summary>
+            Class which represents
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.Special.Impl.TimeSelector"/>
+            in json
+            format.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.Patterns.TimeSelectorDTO.#ctor(System.String)">
+            <summary>
+            Constructs new
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.TimeSelectorDTO"/>
+            with passed parameter.
+            </summary>
+            <param name="evaluatedPattern">pattern to use</param>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.VATSelectorDTO">
+            <summary>
+            Class which represents
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.Special.Impl.VATSelector"/>
+            in json
+            format.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.Patterns.VATSelectorDTO.#ctor(System.String)">
+            <summary>
+            Constructs new
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.VATSelectorDTO"/>
+            with passed parameter.
+            </summary>
+            <param name="evaluatedPattern">pattern to use</param>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.RelativeBoundarySelectorDTO">
+            <summary>
+            Class which represents
+            <see cref="T:iText.Pdf2Data.Selector.Impl.RelativeBoundarySelector"/>
+            in json format.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.RelativeBoundarySelectorDTO.#ctor(System.Nullable{iText.Pdf2Data.Dto.Json.Selectors.Enums.Side})">
+            <summary>
+            Constructs new
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.RelativeBoundarySelectorDTO"/>
+            with passed parameter.
+            </summary>
+            <param name="side">side for relation</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.RelativeBoundarySelectorDTO.GetSide">
+            <summary>Gets side for relation.</summary>
+            <returns>side for relation</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Selectors.SelectorDTO">
+            <summary>Parent class for all selectors json representations.</summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.SelectorDTO.#ctor(System.String)">
+            <summary>Constructor which used in successors for setting selector type.</summary>
+            <param name="selectorType">selector type</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Selectors.SelectorDTO.GetSelectorType">
+            <summary>Gets selector type.</summary>
+            <returns>selector type</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Templates.DataFieldDTO">
+            <summary>
+            Class which represents
+            <see cref="T:iText.Pdf2Data.Template.DataField"/>
+            in json format.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Templates.DataFieldDTO.#ctor(System.String,iText.Pdf2Data.Dto.Json.Templates.PdfLocationDTO,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Collections.Generic.IList{iText.Pdf2Data.Dto.Json.Selectors.SelectorDTO})">
+            <summary>
+            Constructs new
+            <see cref="T:iText.Pdf2Data.Dto.Json.Templates.DataFieldDTO"/>
+            with passed parameters.
+            </summary>
+            <param name="name">name of data field</param>
+            <param name="referencePdfOrigin">location of data field</param>
+            <param name="multipleAllowed">
+            
+            <see langword="true"/>
+            if data field may match more than one occurrence,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <param name="zeroAllowed">
+            
+            <see langword="true"/>
+            if data field may match zero occurrence,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <param name="selectors">list of selectors related to data field</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Templates.DataFieldDTO.GetName">
+            <summary>Gets name of data field.</summary>
+            <returns>name of data field.</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Templates.DataFieldDTO.GetReferencePdfOrigin">
+            <summary>Gets location of data field.</summary>
+            <returns>location of data field</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Templates.DataFieldDTO.GetMultipleAllowed">
+            <summary>Gets if data field may match more than one occurrence.</summary>
+            <returns>
+            
+            <see langword="true"/>
+            if data field may match more than one occurrence,
+            <see langword="false"/>
+            otherwise
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Templates.DataFieldDTO.GetZeroAllowed">
+            <summary>Gets if data field may match zero occurrence.</summary>
+            <returns>
+            
+            <see langword="true"/>
+            if data field may match zero occurrence,
+            <see langword="false"/>
+            otherwise
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Templates.DataFieldDTO.GetSelectors">
+            <summary>Gets selectors related to current data field.</summary>
+            <returns>selectors related to data field</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Templates.PdfLocationDTO">
+            <summary>Class which represents location of data field on the defined page.</summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Templates.PdfLocationDTO.#ctor(System.Nullable{System.Int32},iText.Pdf2Data.Dto.Json.Templates.RectangleDTO)">
+            <summary>
+            Constructs new
+            <see cref="T:iText.Pdf2Data.Dto.Json.Templates.PdfLocationDTO"/>
+            with passed parameters.
+            </summary>
+            <param name="page">the page, on which data field is located</param>
+            <param name="location">location of data field on the page</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Templates.PdfLocationDTO.GetPage">
+            <summary>Gets page, where data field is located.</summary>
+            <returns>page, where data field is located</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Templates.PdfLocationDTO.GetLocation">
+            <summary>Gets location of data field.</summary>
+            <returns>data field location.</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Templates.RectangleDTO">
+            <summary>
+            Class which represents
+            <see cref="T:iText.Pdf2Data.Structure.Geom.Rectangle"/>
+            in json format.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Templates.RectangleDTO.#ctor(System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            Constructs new
+            <see cref="T:iText.Pdf2Data.Dto.Json.Templates.RectangleDTO"/>
+            with passed parameters.
+            </summary>
+            <param name="left">left coordinate of rectangle</param>
+            <param name="right">right coordinate of rectangle</param>
+            <param name="top">top coordinate of rectangle</param>
+            <param name="bottom">bottom coordinate of rectangle</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Templates.RectangleDTO.GetLeft">
+            <summary>Gets left coordinate of rectangle.</summary>
+            <returns>rectangle left coordinate</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Templates.RectangleDTO.GetRight">
+            <summary>Gets right coordinate of rectangle.</summary>
+            <returns>rectangle right coordinate</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Templates.RectangleDTO.GetTop">
+            <summary>Gets top coordinate of rectangle.</summary>
+            <returns>rectangle top coordinate</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Templates.RectangleDTO.GetBottom">
+            <summary>Gets bottom coordinate of rectangle.</summary>
+            <returns>rectangle bottom coordinate</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Dto.Json.Templates.TemplateDTO">
+            <summary>
+            Class which represents
+            <see cref="T:iText.Pdf2Data.Template.Template"/>
+            in json format.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Templates.TemplateDTO.#ctor(System.String,System.Nullable{System.Boolean},System.Collections.Generic.IList{iText.Pdf2Data.Dto.Json.Templates.DataFieldDTO})">
+            <summary>
+            Constructs new
+            <see cref="T:iText.Pdf2Data.Dto.Json.Templates.TemplateDTO"/>
+            with passed parameters.
+            </summary>
+            <param name="templateSchemaVersion">template schema version</param>
+            <param name="processed">
+            
+            <see langword="true"/>
+            if template is processed,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <param name="dataFields">list of data fields</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Templates.TemplateDTO.GetTemplateSchemaVersion">
+            <summary>Gets template schema version.</summary>
+            <returns>template schema version</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Templates.TemplateDTO.GetProcessed">
+            <summary>Gets is template processed or not.</summary>
+            <returns>
+            
+            <see langword="true"/>
+            if template is processed,
+            <see langword="false"/>
+            otherwise
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Dto.Json.Templates.TemplateDTO.GetDataFields">
+            <summary>Gets data fields from template.</summary>
+            <returns>data fields list</returns>
+        </member>
+        <member name="F:iText.Pdf2Data.Exceptions.ExceptionMessageConstant.INVALID_ENUM_PROPERTY">
+            <summary>Messages notify about problems during selector enums converting.</summary>
+            <remarks>
+            Messages notify about problems during selector enums converting. List of params:
+            <list type="bullet">
+            <item><description> 0th is enum class which cause problems;
+            </description></item>
+            <item><description> 1th is name of enum property which can not be converted;
+            </description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="T:iText.Pdf2Data.Exceptions.InvalidTemplateException">
+            <summary>Exception class for invalid selector/template dto objects.</summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Exceptions.InvalidTemplateException.#ctor(System.String)">
+            <summary>Creates a new InvalidTemplateException.</summary>
+            <param name="message">the detail message</param>
+        </member>
+        <member name="M:iText.Pdf2Data.IO.Content.TPIExtractor.GetAllTPIBunches(System.Int32)">
+            <param name="page">1-based page index</param>
+            <returns/>
+        </member>
+        <member name="T:iText.Pdf2Data.IO.Pdf2DataMetaInfoContainer">
+            <summary>Class to store metaInfo that will be used for pdf2data operations.</summary>
+        </member>
+        <member name="M:iText.Pdf2Data.IO.Pdf2DataMetaInfoContainer.#ctor(iText.Commons.Actions.Contexts.IMetaInfo)">
+            <summary>Creates Pdf2DataMetaInfoContainer instance with provided meta info.</summary>
+            <param name="metaInfo">the meta info</param>
+        </member>
+        <member name="M:iText.Pdf2Data.IO.Pdf2DataMetaInfoContainer.GetMetaInfo">
+            <summary>Return the IMetaInfo object.</summary>
+            <returns>returns IMetaInfo</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.IO.Pdf.DocumentCleaner.RemoveAnnotations(iText.Pdf2Data.DocumentSource)">
+            <exception cref="T:System.IO.IOException"/>
+        </member>
+        <member name="M:iText.Pdf2Data.IO.Pdf.DocumentCleaner.RemoveAnnotationsAndImages(iText.Pdf2Data.DocumentSource)">
+            <exception cref="T:System.IO.IOException"/>
+        </member>
+        <member name="T:iText.Pdf2Data.Mappers.FontStyleSelectorEnumMapper">
+            <summary>
+            Class for converting
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.FontStyleSelectorDTO"/>
+            enum property to it
+            respective property in selector.
+            </summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.FontStyleSelectorEnumMapper.ConvertFontStyles(System.Collections.Generic.IList{System.Nullable{iText.Pdf2Data.Dto.Json.Selectors.Enums.FontStyles}})">
+            <summary>
+            Converts list of
+            <see cref="!:iText.Pdf2Data.Dto.Json.Selectors.Enums.FontStyles?"/>
+            in its byte representation.
+            </summary>
+            <param name="toConvert">list of styles to convert</param>
+            <returns>byte representation of styles list</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Mappers.SelectorEnumMapper">
+            <summary>Class for converting dto enum properties to their respective properties in selectors.</summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorEnumMapper.ConvertAlignFilter(System.Nullable{iText.Pdf2Data.Dto.Json.Selectors.Enums.AlignFilter})">
+            <summary>
+            Converts
+            <see cref="!:iText.Pdf2Data.Dto.Json.Selectors.Enums.AlignFilter?"/>
+            in its string representation.
+            </summary>
+            <param name="toConvert">filter to convert</param>
+            <returns>
+            string representation of passed
+            <see cref="!:iText.Pdf2Data.Dto.Json.Selectors.Enums.AlignFilter?"/>
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorEnumMapper.ConvertBarcodeFormat(System.Nullable{iText.Pdf2Data.Dto.Json.Selectors.Enums.BarcodeFormat})">
+            <summary>
+            Converts
+            <see cref="!:iText.Pdf2Data.Dto.Json.Selectors.Enums.BarcodeFormat?"/>
+            in its string representation.
+            </summary>
+            <param name="toConvert">barcode to convert</param>
+            <returns>
+            string representation of passed
+            <see cref="!:iText.Pdf2Data.Dto.Json.Selectors.Enums.BarcodeFormat?"/>
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorEnumMapper.ConvertCharSpacing(System.Nullable{iText.Pdf2Data.Dto.Json.Selectors.Enums.CharSpacing})">
+            <summary>
+            Converts
+            <see cref="!:iText.Pdf2Data.Dto.Json.Selectors.Enums.CharSpacing?"/>
+            in its string representation.
+            </summary>
+            <param name="toConvert">char spacing convert</param>
+            <returns>
+            string representation of passed
+            <see cref="!:iText.Pdf2Data.Dto.Json.Selectors.Enums.CharSpacing?"/>
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorEnumMapper.ConvertLineSpacing(System.Nullable{iText.Pdf2Data.Dto.Json.Selectors.Enums.LineSpacing})">
+            <summary>
+            Converts
+            <see cref="!:iText.Pdf2Data.Dto.Json.Selectors.Enums.LineSpacing?"/>
+            in its string representation.
+            </summary>
+            <param name="toConvert">line spacing convert</param>
+            <returns>
+            string representation of passed
+            <see cref="!:iText.Pdf2Data.Dto.Json.Selectors.Enums.LineSpacing?"/>
+            </returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Mappers.SelectorJsonMapper">
+            <summary>Class for converting selector dto to proper entity classes.</summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorJsonMapper.ConvertSelectorDTO(iText.Pdf2Data.Dto.Json.Selectors.SelectorDTO,System.Boolean)">
+            <summary>Correlates the passed dto with the proper converting method.</summary>
+            <param name="dtoToConvert">dto, which will be converted</param>
+            <param name="isProcessed">
+            
+            <see langword="true"/>
+            if selector is processed,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <returns>
+            the successor of
+            <see cref="T:iText.Pdf2Data.Selector.Base.Selector"/>
+            which represent passed dto
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorJsonMapper.ConvertAlignSelectorDTO(iText.Pdf2Data.Dto.Json.Selectors.AlignSelectorDTO,System.Boolean)">
+            <summary>
+            Converts
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.AlignSelectorDTO"/>
+            to
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.AlignSelector"/>.
+            </summary>
+            <param name="dtoToConvert">dto, which will be converted</param>
+            <param name="isProcessed">
+            
+            <see langword="true"/>
+            if selector is processed,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <returns>
+            the instance of
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.AlignSelector"/>
+            which represents passed dto
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorJsonMapper.ConvertBarcodeSelectorDTO(iText.Pdf2Data.Dto.Json.Selectors.BarcodeSelectorDTO,System.Boolean)">
+            <summary>
+            Converts
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.BarcodeSelectorDTO"/>
+            to
+            <see cref="T:iText.Pdf2Data.Selector.Impl.BarcodeSelector"/>.
+            </summary>
+            <param name="dtoToConvert">dto, which will be converted</param>
+            <param name="isProcessed">
+            
+            <see langword="true"/>
+            if selector is processed,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <returns>
+            the instance of
+            <see cref="T:iText.Pdf2Data.Selector.Impl.BarcodeSelector"/>
+            which represents passed dto
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorJsonMapper.ConvertBoundarySelectorDTO(iText.Pdf2Data.Dto.Json.Selectors.BoundarySelectorDTO,System.Boolean)">
+            <summary>
+            Converts
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.BoundarySelectorDTO"/>
+            to
+            <see cref="T:iText.Pdf2Data.Selector.Impl.BoundarySelector"/>.
+            </summary>
+            <param name="dtoToConvert">dto, which will be converted</param>
+            <param name="isProcessed">
+            
+            <see langword="true"/>
+            if selector is processed,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <returns>
+            the instance of
+            <see cref="T:iText.Pdf2Data.Selector.Impl.BoundarySelector"/>
+            which represents passed dto
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorJsonMapper.ConvertDateSelectorDTO(iText.Pdf2Data.Dto.Json.Selectors.Patterns.DateSelectorDTO,System.Boolean)">
+            <summary>
+            Converts
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.DateSelectorDTO"/>
+            to
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.Special.Impl.DateSelector"/>.
+            </summary>
+            <param name="dtoToConvert">dto, which will be converted</param>
+            <param name="isProcessed">
+            
+            <see langword="true"/>
+            if selector is processed,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <returns>
+            the instance of
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.Special.Impl.DateSelector"/>
+            which represents passed dto
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorJsonMapper.ConvertFontColorSelectorDTO(iText.Pdf2Data.Dto.Json.Selectors.FontColorSelectorDTO,System.Boolean)">
+            <summary>
+            Converts
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.FontColorSelectorDTO"/>
+            to
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.FontColorSelector"/>.
+            </summary>
+            <param name="dtoToConvert">dto, which will be converted</param>
+            <param name="isProcessed">
+            
+            <see langword="true"/>
+            if selector is processed,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <returns>
+            the instance of
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.FontColorSelector"/>
+            which represents passed dto
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorJsonMapper.ConvertFontFamilySelectorDTO(iText.Pdf2Data.Dto.Json.Selectors.FontFamilySelectorDTO,System.Boolean)">
+            <summary>
+            Converts
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.FontFamilySelectorDTO"/>
+            to
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.FontNameSelector"/>.
+            </summary>
+            <param name="dtoToConvert">dtoToConvert dto, which will be converted</param>
+            <param name="isProcessed">
+            
+            <see langword="true"/>
+            if selector is processed,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <returns>
+            the instance of
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.FontNameSelector"/>
+            which represents passed dto
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorJsonMapper.ConvertFontStyleSelectorDTO(iText.Pdf2Data.Dto.Json.Selectors.FontStyleSelectorDTO,System.Boolean)">
+            <summary>
+            Converts
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.FontStyleSelectorDTO"/>
+            to
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.FontStyleSelector"/>.
+            </summary>
+            <param name="dtoToConvert">dto, which will be converted</param>
+            <param name="isProcessed">
+            
+            <see langword="true"/>
+            if selector is processed,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <returns>
+            the instance of
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.FontStyleSelector"/>
+            which represents passed dto
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorJsonMapper.ConvertGroupSelectorDTO(iText.Pdf2Data.Dto.Json.Selectors.GroupSelectorDTO,System.Boolean)">
+            <summary>
+            Converts
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.GroupSelectorDTO"/>
+            to
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Postprocessing.GroupSelector"/>.
+            </summary>
+            <param name="dtoToConvert">dto, which will be converted</param>
+            <param name="isProcessed">
+            
+            <see langword="true"/>
+            if selector is processed,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <returns>
+            the instance of
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Postprocessing.GroupSelector"/>
+            which represents passed dto
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorJsonMapper.ConvertIBANSelectorDTO(iText.Pdf2Data.Dto.Json.Selectors.Patterns.IBANSelectorDTO,System.Boolean)">
+            <summary>
+            Converts
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.IBANSelectorDTO"/>
+            to
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.Special.Impl.IBANSelector"/>.
+            </summary>
+            <param name="dtoToConvert">dto, which will be converted</param>
+            <param name="isProcessed">
+            
+            <see langword="true"/>
+            if selector is processed,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <returns>
+            the instance of
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.Special.Impl.IBANSelector"/>
+            which represents passed dto
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorJsonMapper.ConvertIntegerSelectorDTO(iText.Pdf2Data.Dto.Json.Selectors.Patterns.IntegerSelectorDTO,System.Boolean)">
+            <summary>
+            Converts
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.IntegerSelectorDTO"/>
+            to
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.Special.Impl.IntegerSelector"/>.
+            </summary>
+            <param name="dtoToConvert">dto, which will be converted</param>
+            <param name="isProcessed">
+            
+            <see langword="true"/>
+            if selector is processed,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <returns>
+            the instance of
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.Special.Impl.IntegerSelector"/>
+            which represents passed dto
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorJsonMapper.ConvertLineSelectorDTO(iText.Pdf2Data.Dto.Json.Selectors.LineSelectorDTO,System.Boolean)">
+            <summary>
+            Converts
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.LineSelectorDTO"/>
+            to
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Group.LineGrouper"/>.
+            </summary>
+            <param name="dtoToConvert">dto, which will be converted</param>
+            <param name="isProcessed">
+            
+            <see langword="true"/>
+            if selector is processed,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <returns>
+            the instance of
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Group.LineGrouper"/>
+            which represents passed dto
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorJsonMapper.ConvertParagraphSelectorDTO(iText.Pdf2Data.Dto.Json.Selectors.ParagraphSelectorDTO,System.Boolean)">
+            <summary>
+            Converts
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.ParagraphSelectorDTO"/>
+            to
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Group.ParagraphGrouper"/>.
+            </summary>
+            <param name="dtoToConvert">dto, which will be converted</param>
+            <param name="isProcessed">
+            
+            <see langword="true"/>
+            if selector is processed,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <returns>
+            the instance of
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Group.ParagraphGrouper"/>
+            which represents passed dto
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorJsonMapper.ConvertPatternSelectorDTO(iText.Pdf2Data.Dto.Json.Selectors.Patterns.PatternSelectorDTO,System.Boolean)">
+            <summary>
+            Converts
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.PatternSelectorDTO"/>
+            to
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.SimpleRESelector"/>.
+            </summary>
+            <param name="dtoToConvert">dto, which will be converted</param>
+            <param name="isProcessed">
+            
+            <see langword="true"/>
+            if selector is processed,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <returns>
+            the instance of
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.SimpleRESelector"/>
+            which represents passed dto
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorJsonMapper.ConvertPriceSelectorDTO(iText.Pdf2Data.Dto.Json.Selectors.Patterns.PriceSelectorDTO,System.Boolean)">
+            <summary>
+            Converts
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.PriceSelectorDTO"/>
+            to
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.Special.Impl.PriceSelector"/>.
+            </summary>
+            <param name="dtoToConvert">dto, which will be converted</param>
+            <param name="isProcessed">
+            
+            <see langword="true"/>
+            if selector is processed,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <returns>
+            the instance of
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.Special.Impl.PriceSelector"/>
+            which represents passed dto
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorJsonMapper.ConvertRegExpSelectorDTO(iText.Pdf2Data.Dto.Json.Selectors.Patterns.RegExpSelectorDTO,System.Boolean)">
+            <summary>
+            Converts
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.RegExpSelectorDTO"/>
+            to
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.RegExpSelector"/>.
+            </summary>
+            <param name="dtoToConvert">dto, which will be converted</param>
+            <param name="isProcessed">
+            
+            <see langword="true"/>
+            if selector is processed,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <returns>
+            the instance of
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.RegExpSelector"/>
+            which represents passed dto
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorJsonMapper.ConvertRelativeBoundarySelectorDTO(iText.Pdf2Data.Dto.Json.Selectors.RelativeBoundarySelectorDTO,System.Boolean)">
+            <summary>
+            Converts
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.RelativeBoundarySelectorDTO"/>
+            to
+            <see cref="T:iText.Pdf2Data.Selector.Impl.RelativeBoundarySelector"/>.
+            </summary>
+            <param name="dtoToConvert">dto, which will be converted</param>
+            <param name="isProcessed">
+            
+            <see langword="true"/>
+            if selector is processed,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <returns>
+            the instance of
+            <see cref="T:iText.Pdf2Data.Selector.Impl.RelativeBoundarySelector"/>
+            which represents passed dto
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorJsonMapper.ConvertTimeSelectorDTO(iText.Pdf2Data.Dto.Json.Selectors.Patterns.TimeSelectorDTO,System.Boolean)">
+            <summary>
+            Converts
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.TimeSelectorDTO"/>
+            to
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.Special.Impl.TimeSelector"/>.
+            </summary>
+            <param name="dtoToConvert">dto, which will be converted</param>
+            <param name="isProcessed">
+            
+            <see langword="true"/>
+            if selector is processed,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <returns>
+            the instance of
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.Special.Impl.TimeSelector"/>
+            which represents passed dto
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorJsonMapper.ConvertVATSelectorDTO(iText.Pdf2Data.Dto.Json.Selectors.Patterns.VATSelectorDTO,System.Boolean)">
+            <summary>
+            Converts
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.VATSelectorDTO"/>
+            to
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.Special.Impl.VATSelector"/>.
+            </summary>
+            <param name="dtoToConvert">dto, which will be converted</param>
+            <param name="isProcessed">
+            
+            <see langword="true"/>
+            if selector is processed,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <returns>
+            the instance of
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.Special.Impl.VATSelector"/>
+            which represents passed dto
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.SelectorJsonMapper.ConvertInnerPatternSelectorDTO(iText.Pdf2Data.Dto.Json.Selectors.Patterns.SimplePatternSelectorDTO,System.Boolean)">
+            <summary>
+            Converts
+            <see cref="T:iText.Pdf2Data.Dto.Json.Selectors.Patterns.SimplePatternSelectorDTO"/>
+            to the appropriate
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.Special.KeywordSelector"/>.
+            </summary>
+            <param name="dtoToConvert">dto, which will be converted</param>
+            <param name="isProcessed">
+            
+            <see langword="true"/>
+            if selector is processed,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <returns>
+            one of
+            <see cref="T:iText.Pdf2Data.Selector.Impl.Text.Regexp.Special.KeywordSelector"/>
+            corresponding to the transferred dto
+            </returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Mappers.TemplateJsonMapper">
+            <summary>Class for converting template dto to proper entity classes.</summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.TemplateJsonMapper.ConvertTemplateDTO(iText.Pdf2Data.Dto.Json.Templates.TemplateDTO)">
+            <summary>
+            Converts
+            <see cref="T:iText.Pdf2Data.Dto.Json.Templates.TemplateDTO"/>
+            to
+            <see cref="T:iText.Pdf2Data.Template.Template"/>.
+            </summary>
+            <param name="dtoToConvert">dto, which will be converted</param>
+            <returns>
+            the instance of
+            <see cref="T:iText.Pdf2Data.Template.Template"/>
+            which represents passed dto
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.TemplateJsonMapper.ConvertDataFieldDTO(iText.Pdf2Data.Dto.Json.Templates.DataFieldDTO,System.Boolean)">
+            <summary>
+            Converts
+            <see cref="T:iText.Pdf2Data.Dto.Json.Templates.DataFieldDTO"/>
+            to
+            <see cref="T:iText.Pdf2Data.Template.DataField"/>.
+            </summary>
+            <param name="dtoToConvert">dto, which will be converted</param>
+            <param name="isProcessedTemplate">
+            
+            <see langword="true"/>
+            if data field is processed,
+            <see langword="false"/>
+            otherwise
+            </param>
+            <returns>
+            the instance of
+            <see cref="T:iText.Pdf2Data.Template.DataField"/>
+            which represents passed dto
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.TemplateJsonMapper.ConvertRectangleDTO(iText.Pdf2Data.Dto.Json.Templates.RectangleDTO)">
+            <summary>
+            Converts
+            <see cref="T:iText.Pdf2Data.Dto.Json.Templates.RectangleDTO"/>
+            to
+            <see cref="T:iText.Pdf2Data.Structure.Geom.Rectangle"/>.
+            </summary>
+            <param name="dtoToConvert">dto, which will be converted</param>
+            <returns>
+            the instance of
+            <see cref="T:iText.Pdf2Data.Structure.Geom.Rectangle"/>
+            which represents passed dto
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Mappers.TemplateJsonMapper.ConvertRequiredBoolean(System.Nullable{System.Boolean},System.String,System.String)">
+            <summary>
+            Converts
+            <see cref="!:bool?"/>
+            to primitive object.
+            </summary>
+            <param name="toConvert">
+            
+            <see cref="!:bool?"/>
+            object to convert
+            </param>
+            <returns>primitive value of passed object</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Pdf2DataExtractor">
+            <summary>Pdf2DataExtractor is a class for extracting templates and data from PDF files.</summary>
+            <remarks>
+            Pdf2DataExtractor is a class for extracting templates and data from PDF files.
+            <para />
+            To extract templates, use
+            <see cref="M:iText.Pdf2Data.Pdf2DataExtractor.ParseTemplateFromPDF(System.String)"/>
+            or
+            <see cref="M:iText.Pdf2Data.Pdf2DataExtractor.ParseTemplateFromXML(System.String)"/>.
+            <para />
+            To perform a single data extraction, use
+            <see cref="M:iText.Pdf2Data.Pdf2DataExtractor.Recognize(iText.Pdf2Data.Template.Template,System.String)"/>.
+            <para />
+            To perform a batch extraction, it is recommended to create an instance of Pdf2DataExtractor
+            and then use
+            <see cref="M:iText.Pdf2Data.Pdf2DataExtractor.Recognize(System.String)"/>
+            method for each pdf file.
+            </remarks>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.ParseTemplateFromPDF(System.String)">
+            <summary>Parses the template from pdf file.</summary>
+            <param name="templatePDF">a path to pdf file</param>
+            <returns>A template instance.</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.ParseTemplateFromPDF(System.String,System.String)">
+            <summary>Parses the template from pdf file and save it into xml file.</summary>
+            <param name="templatePDF">a path to pdf file</param>
+            <param name="outXML">a path to xml file</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.ParseTemplateFromPDF(System.IO.Stream)">
+            <summary>Parses the template from input stream.</summary>
+            <param name="templateInputStream">pdf input stream with template</param>
+            <returns>A template instance.</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.ParseTemplateFromPDF(System.IO.Stream,System.IO.Stream)">
+            <summary>Parses the template from pdf input stream and save it into output stream in xml form.</summary>
+            <param name="templateInputStream">input stream with template</param>
+            <param name="xmlStream">output stream for saving template</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.ParseTemplateFromXML(System.String)">
+            <summary>Gets the template from xml file.</summary>
+            <param name="templateXML">a path to xml file</param>
+            <returns>Template instance.</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.ParseTemplateFromXML(System.IO.Stream)">
+            <summary>Gets the template from input stream.</summary>
+            <param name="xmlInputStream">input stream that contains template in xml form</param>
+            <returns>Template instance.</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.Recognize(iText.Pdf2Data.Template.Template,System.String)">
+            <summary>Recognizes a pdf file using template instance.</summary>
+            <param name="template">template instance</param>
+            <param name="targetPDF">path to pdf file for recognition</param>
+            <returns>Result of recognition.</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.Recognize(iText.Pdf2Data.Template.Template,System.String,System.String)">
+            <summary>Recognize a pdf file using template instance and write results to pdf file.</summary>
+            <param name="template">template instance</param>
+            <param name="targetPDF">path to pdf file for recognition</param>
+            <param name="outputPDF">path to pdf file with recognition results (annotation type)</param>
+            <returns>Result of recognition.</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.Recognize(iText.Pdf2Data.Template.Template,System.IO.Stream)">
+            <summary>Recognizes a pdf file using template instance.</summary>
+            <param name="template">template instance</param>
+            <param name="targetInputStream">input stream from pdf file for recognition</param>
+            <returns>Result of recognition.</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.Recognize(iText.Pdf2Data.Template.Template,System.IO.Stream,System.IO.Stream)">
+            <summary>Recognizes a pdf file using template instance and write results to pdf file.</summary>
+            <param name="template">template instance</param>
+            <param name="targetInputStream">input stream from pdf file for recognition</param>
+            <param name="pdfOutputStream">output stream for writing recognition results (pdf annotation type)</param>
+            <returns>Result of recognition.</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.Recognize(iText.Pdf2Data.Template.Template,System.IO.Stream,System.IO.Stream,iText.Pdf2Data.RecognitionProperties)">
+            <summary>Recognizes a pdf file using template instance and write results to pdf file.</summary>
+            <param name="template">template instance</param>
+            <param name="targetInputStream">input stream from pdf file for recognition</param>
+            <param name="pdfOutputStream">output stream for writing recognition results (pdf annotation type)</param>
+            <param name="properties">a <c>RecognitionProperties</c> instance</param>
+            <returns>Result of recognition.</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.Recognize(System.String)">
+            <summary>Recognize a pdf file using template instance.</summary>
+            <param name="targetPDF">path to pdf file for recognition</param>
+            <returns>Result of recognition.</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.Recognize(System.String,System.String)">
+            <summary>Recognize a pdf file using template instance and write results to pdf file.</summary>
+            <param name="targetPDF">path to pdf file for recognition</param>
+            <param name="outputPDF">path to pdf file with recognition results (annotation type)</param>
+            <returns>Result of recognition.</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.Recognize(System.IO.Stream)">
+            <summary>Recognize a pdf file using template instance.</summary>
+            <param name="targetInputStream">input stream from pdf file for recognition</param>
+            <returns>Result of recognition.</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.Recognize(System.IO.Stream,System.IO.Stream)">
+            <summary>Recognize a pdf file using template instance and write results to pdf file.</summary>
+            <param name="targetInputStream">input stream from pdf file for recognition</param>
+            <param name="pdfOutputStream">output stream for writing recognition results (pdf annotation type)</param>
+            <returns>Result of recognition.</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.RecognizeToXML(iText.Pdf2Data.Template.Template,System.String,System.String)">
+            <summary>Recognize a pdf file using template instance and save results to xml file.</summary>
+            <param name="template">template instance</param>
+            <param name="targetPDF">path to pdf file for recognition</param>
+            <param name="outputXML">path to xml file with recognition results</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.RecognizeToXML(iText.Pdf2Data.Template.Template,System.String,System.String,iText.Pdf2Data.RecognitionProperties)">
+            <summary>Recognize a pdf file using template instance and save results to xml file.</summary>
+            <param name="template">template instance</param>
+            <param name="targetPDF">path to pdf file for recognition</param>
+            <param name="outputXML">path to xml file with recognition results</param>
+            <param name="properties">a <c>RecognitionProperties</c> instance</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.RecognizeToXML(iText.Pdf2Data.Template.Template,System.String,System.String,System.String)">
+            <summary>Recognize a pdf file using template instance and save results to xml and pdf files.</summary>
+            <param name="template">template instance</param>
+            <param name="targetPDF">path to pdf file for recognition</param>
+            <param name="outputPDF">path to pdf file with recognition results (annotation type)</param>
+            <param name="outputXML">path to xml file with recognition results</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.RecognizeToXML(iText.Pdf2Data.Template.Template,System.String,System.String,System.String,iText.Pdf2Data.RecognitionProperties)">
+            <summary>Recognize a pdf file using template instance and save results to xml and pdf files.</summary>
+            <param name="template">template instance</param>
+            <param name="targetPDF">path to pdf file for recognition</param>
+            <param name="outputPDF">path to pdf file with recognition results (annotation type)</param>
+            <param name="outputXML">path to xml file with recognition results</param>
+            <param name="properties">a <c>RecognitionProperties</c> instance</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.RecognizeToJson(iText.Pdf2Data.Template.Template,System.String,System.String,iText.Pdf2Data.RecognitionProperties)">
+            <summary>Recognize a pdf file using template instance and save results to json file.</summary>
+            <param name="template">template instance</param>
+            <param name="targetPDF">path to pdf file for recognition</param>
+            <param name="outputJson">path to json file with recognition results</param>
+            <param name="properties">a <c>RecognitionProperties</c> instance</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.RecognizeToXML(iText.Pdf2Data.Template.Template,System.IO.Stream,System.IO.Stream)">
+            <summary>Recognize a pdf file using template instance and save results to xml file.</summary>
+            <param name="template">template instance</param>
+            <param name="targetInputStream">input stream from pdf file for recognition</param>
+            <param name="xmlOutputStream">output stream for writing recognition results (xml type)</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.RecognizeToXML(iText.Pdf2Data.Template.Template,System.IO.Stream,System.IO.Stream,iText.Pdf2Data.RecognitionProperties)">
+            <summary>Recognize a pdf file using template instance and save results to xml file.</summary>
+            <param name="template">template instance</param>
+            <param name="targetInputStream">input stream from pdf file for recognition</param>
+            <param name="xmlOutputStream">output stream for writing recognition results (xml type)</param>
+            <param name="properties">a <c>RecognitionProperties</c> instance</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.RecognizeToXML(iText.Pdf2Data.Template.Template,System.IO.Stream,System.IO.Stream,System.IO.Stream)">
+            <summary>Recognize a pdf file using template instance and save results to xml and pdf files.</summary>
+            <param name="template">template instance</param>
+            <param name="targetInputStream">input stream from pdf file for recognition</param>
+            <param name="pdfOutputStream">output stream for writing recognition results (pdf annotation type)</param>
+            <param name="xmlOutputStream">output stream for writing recognition results (xml type)</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.RecognizeToXML(iText.Pdf2Data.Template.Template,System.IO.Stream,System.IO.Stream,System.IO.Stream,iText.Pdf2Data.RecognitionProperties)">
+            <summary>Recognize a pdf file using template instance and save results to xml and pdf files.</summary>
+            <param name="template">template instance</param>
+            <param name="targetInputStream">input stream from pdf file for recognition</param>
+            <param name="pdfOutputStream">output stream for writing recognition results (pdf annotation type)</param>
+            <param name="xmlOutputStream">output stream for writing recognition results (xml type)</param>
+            <param name="properties">a <c>RecognitionProperties</c> instance</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.RecognizeToJson(iText.Pdf2Data.Template.Template,System.IO.Stream,System.IO.Stream,iText.Pdf2Data.RecognitionProperties)">
+            <summary>Recognize a pdf file using template instance and save results to json and pdf files.</summary>
+            <param name="template">template instance</param>
+            <param name="targetInputStream">input stream from pdf file for recognition</param>
+            <param name="jsonOutputStream">output stream for writing recognition results (json type)</param>
+            <param name="properties">a <c>RecognitionProperties</c> instance</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.RecognizeToXML(System.String,System.String,System.String)">
+            <summary>Recognize a pdf file using template instance and save results to xml and pdf files.</summary>
+            <param name="targetPDF">path to pdf file for recognition</param>
+            <param name="outputPDF">path to pdf file with recognition results (annotation type)</param>
+            <param name="outputXML">path to xml file with recognition results</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.RecognizeToXML(System.String,System.String,System.String,iText.Pdf2Data.RecognitionProperties)">
+            <summary>Recognize a pdf file using template instance and save results to xml and pdf files.</summary>
+            <param name="targetPDF">path to pdf file for recognition</param>
+            <param name="outputPDF">path to pdf file with recognition results (annotation type)</param>
+            <param name="outputXML">path to xml file with recognition results</param>
+            <param name="properties">a <c>RecognitionProperties</c> instance</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.RecognizeToXML(System.IO.Stream,System.IO.Stream,System.IO.Stream)">
+            <summary>Recognize a pdf file using template instance and save results to xml and pdf files.</summary>
+            <param name="targetInputStream">input stream from pdf file for recognition</param>
+            <param name="pdfOutputStream">output stream for writing recognition results (pdf annotation type)</param>
+            <param name="xmlOutputStream">output stream for writing recognition results (xml type)</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Pdf2DataExtractor.RecognizeToXML(System.IO.Stream,System.IO.Stream,System.IO.Stream,iText.Pdf2Data.RecognitionProperties)">
+            <summary>Recognize a pdf file using template instance and save results to xml and pdf files.</summary>
+            <param name="targetInputStream">input stream from pdf file for recognition</param>
+            <param name="pdfOutputStream">output stream for writing recognition results (pdf annotation type)</param>
+            <param name="xmlOutputStream">output stream for writing recognition results (xml type)</param>
+            <param name="properties">a <c>RecognitionProperties</c> instance</param>
+        </member>
+        <member name="T:iText.Pdf2Data.RecognitionProperties">
+            <summary>The <i>RecognitionProperties</i> class represents properties of recognition.</summary>
+        </member>
+        <member name="F:iText.Pdf2Data.RecognitionProperties.metaInfo">
+            <summary>Meta info that will be added to the events thrown by pdf2data.</summary>
+        </member>
+        <member name="M:iText.Pdf2Data.RecognitionProperties.#ctor">
+            <summary>Creates an instance of properties with default state of extracting metadata as <i>false</i></summary>
+        </member>
+        <member name="M:iText.Pdf2Data.RecognitionProperties.AddExtractionMetadata(System.Boolean)">
+            <summary>Sets if metadata will be extracted during recognition.</summary>
+            <param name="needMetadata"><i>true</i> or <i>false</i></param>
+        </member>
+        <member name="M:iText.Pdf2Data.RecognitionProperties.SetMetaInfo(iText.Commons.Actions.Contexts.IMetaInfo)">
+            <summary>Sets IMetaInfo for this recognition properties instance</summary>
+            <param name="metaInfo">IMetaInfo instance</param>
+        </member>
+        <member name="M:iText.Pdf2Data.RecognitionProperties.NeedMetadata">
+            <summary>Returns a state of extracting metadata</summary>
+            <returns>state of extracting metadata</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Rendering.Impl.PdfiumRenderer.OpenDocumentIfNecessary">
+            <exception cref="T:System.IO.IOException"/>
+        </member>
+        <member name="M:iText.Pdf2Data.Rendering.PdfRendererFactory.CreateNonSharedRenderer(iText.Pdf2Data.DocumentSource,System.Single)">
+            <exception cref="T:System.IO.IOException"/>
+        </member>
+        <member name="T:iText.Pdf2Data.Result.ParsingResult">
+            <summary>An object that contains results of recognition.</summary>
+            <remarks>
+            An object that contains results of recognition.
+            <para />
+            There are recognized data for each data field, messages for unrecognized data field
+            (if it wasn't recognized due to some error) and some stats: number of correctly recognized
+            data fields, number of data fields recognized with warnings and number of data fields
+            recognized with errors.
+            </remarks>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ParsingResult.GetMessage(System.String)">
+            <summary>Return an error or warning message for datafield.</summary>
+            <param name="dataFieldName">datafield name</param>
+            <returns>The message if datafield wasn't recognized or <i>null</i> otherwise.</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ParsingResult.SaveToXML(System.String)">
+            <summary>Saves parsing results to xml file.</summary>
+            <param name="outputXML">path to xml file</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ParsingResult.SaveToXML(System.String,iText.Pdf2Data.RecognitionProperties)">
+            <summary>Saves parsing results to xml file.</summary>
+            <param name="outputXML">path to xml file</param>
+            <param name="properties">a <c>RecognitionProperties</c> instance</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ParsingResult.SaveToXML(System.IO.Stream)">
+            <summary>Saves parsing results to output stream in xml form.</summary>
+            <param name="xmlOutputStream">output stream</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ParsingResult.SaveToXML(System.IO.Stream,iText.Pdf2Data.RecognitionProperties)">
+            <summary>Saves parsing results to output stream in xml form.</summary>
+            <param name="xmlOutputStream">output stream</param>
+            <param name="properties">a <c>RecognitionProperties</c> instance</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ParsingResult.GetResults(System.String)">
+            <summary>Returns list of recognized objects.</summary>
+            <param name="dataFieldName">data field name</param>
+            <returns>
+            list of corresponding recognized objects or <i>null</i> if recognition was aborted or
+            there is no data field with specific name
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ParsingResult.GetAllResults">
+            <summary>Returns a map with recognition results.</summary>
+            <returns>Map with datafield name as key and list with recognition elements as value.</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ParsingResult.GetFirstResultAsTable(System.String)">
+            <summary>Checks if recognized elements for specified data field are tables and returns first of them.</summary>
+            <param name="dataFieldName">data field name</param>
+            <returns>
+            first table or <i>null</i> if there are no recognized tables or <i>null</i> if recognition was aborted or
+            there is no data field with specific name
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ParsingResult.GetFirstResultAsImage(System.String)">
+            <summary>Checks if recognized elements for specified datafield are images and returns first of them.</summary>
+            <param name="dataFieldName">datafield name</param>
+            <returns>
+            first image or <i>null</i> if there are no recognized images or <i>null</i> if recognition was aborted or
+            there is no data field with specific name
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ParsingResult.GetFirstResultAsText(System.String)">
+            <summary>Checks if recognized elements for specified datafield aren't tables and returns first of them.</summary>
+            <param name="dataFieldName">datafield name</param>
+            <returns>
+            first result as string or <i>null</i> if there are no recognized elements or <i>null</i> if recognition was aborted or
+            there is no data field with specific name
+            </returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ParsingResult.GetWarningsNumber">
+            <summary>Returns a number of data fields that were recognized with warnings.</summary>
+            <returns>the number of data fields that were recognized with warnings</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ParsingResult.GetErrorsNumber">
+            <summary>Returns a number of data fields that were recognized with errors.</summary>
+            <returns>the number of data fields that were recognized with errors</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ParsingResult.GetCorrectNumber">
+            <summary>Returns a number of data fields that were recognized correctly.</summary>
+            <returns>the number of data fields that were recognized correctly</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Result.ResultCell">
+            <summary>Instance of recognized table cell</summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ResultCell.ToString">
+            <summary>Returns a string presentation of the table cell.</summary>
+            <returns>the string presentation of the table cell</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ResultCell.GetRowspan">
+            <summary>Returns a cell rowspan.</summary>
+            <returns>the int value of rowspan</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ResultCell.GetColspan">
+            <summary>Returns a cell colspan.</summary>
+            <returns>the int value of colspan</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Result.ResultElement">
+            <summary>Instance of recognized data</summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ResultElement.GetBbox">
+            <summary>Return a boundary box of recognized element.</summary>
+            <returns>the boundary box of recognized element</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ResultElement.SetBbox(iText.Pdf2Data.Structure.Geom.Rectangle)">
+            <summary>Set a boundary box for recognized element.</summary>
+            <param name="bbox">the boundary box of recognized element</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ResultElement.GetPage">
+            <summary>Return a page of recognized element.</summary>
+            <returns>page index, one-based</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ResultElement.SetPage(System.Int32)">
+            <summary>Set a page of recognized element.</summary>
+            <param name="page">the page of recognized element</param>
+        </member>
+        <member name="T:iText.Pdf2Data.Result.ResultImage">
+            <summary>Bytes presentation of recognized image.</summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ResultImage.GetBytes">
+            <summary>Get bytes of recognized image.</summary>
+            <returns>the bytes of recognized image</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ResultImage.GetImage">
+            <summary>Get a RenderedImage instance of recognized image.</summary>
+            <returns>the instance of recognized image</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ResultImage.ToString">
+            <summary>Returns a string presentation of recognized element.</summary>
+            <returns>the Base64-encoded data</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Result.ResultTable">
+            <summary>String presentation of recognized elements like Table</summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ResultTable.GetNumberOfRows">
+            <summary>Returns a number of table rows.</summary>
+            <returns>the number of table rows</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ResultTable.GetNumberOfColumns">
+            <summary>Returns a number of table columns.</summary>
+            <returns>the number of table columns</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ResultTable.GetCell(System.Int32,System.Int32)">
+            <summary>Returns a cell with specified row and column indexes.</summary>
+            <param name="row">index of row (from 1 to ...)</param>
+            <param name="column">index of column (from 1 to ...)</param>
+            <returns>Text cell if indexes are valid or <i>null</i> if they aren't.</returns>
+        </member>
+        <member name="T:iText.Pdf2Data.Result.ResultText">
+            <summary>String presentation of recognized elements like Bunch, Line or Paragraph</summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Result.ResultText.ToString">
+            <summary>Returns a string presentation of recognized element.</summary>
+            <returns>string presentation of recognized element</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Structure.TPIGroup.GetPage">
+            <summary>Return a page of group.</summary>
+            <returns>page number, 1-based</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Template.DataField.GetPage">
+            <summary>1-based</summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Template.DataField.SetPage(System.Int32)">
+            <summary>1-based</summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Template.Template.GetDataFieldList(System.Int32)">
+            <param name="page">page index (0-based)</param>
+            <returns/>
+        </member>
+        <member name="M:iText.Pdf2Data.Util.ImageUtil.GetBytes(System.Drawing.Image)">
+            <exception cref="T:System.IO.IOException"/>
+        </member>
+        <member name="M:iText.Pdf2Data.Util.ImageUtil.GetImage(System.Byte[])">
+            <exception cref="T:System.IO.IOException"/>
+        </member>
+        <member name="M:iText.Pdf2Data.Util.ImageUtil.Transform(iText.Pdf2Data.Structure.Image)">
+            <exception cref="T:System.IO.IOException"/>
+        </member>
+        <member name="T:iText.Pdf2Data.Util.Pair`2">
+            <summary>A convenience class to represent name-value pairs.</summary>
+            <typeparam name="K">
+            the key of
+            <see cref="T:iText.Pdf2Data.Util.Pair`2"/>
+            </typeparam>
+            <typeparam name="V">
+            the value of
+            <see cref="T:iText.Pdf2Data.Util.Pair`2"/>
+            </typeparam>
+            <since>JavaFX 2.0</since>
+        </member>
+        <member name="F:iText.Pdf2Data.Util.Pair`2.key">
+            <summary>Key of this <c>Pair</c>.</summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Util.Pair`2.GetKey">
+            <summary>Gets the key for this pair.</summary>
+            <returns>key for this pair</returns>
+        </member>
+        <member name="F:iText.Pdf2Data.Util.Pair`2.value">
+            <summary>Value of this <c>Pair</c>.</summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Util.Pair`2.GetValue">
+            <summary>Gets the value for this pair.</summary>
+            <returns>value for this pair</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Util.Pair`2.#ctor(`0,`1)">
+            <summary>Creates a new pair</summary>
+            <param name="key">The key for this pair</param>
+            <param name="value">The value to use for this pair</param>
+        </member>
+        <member name="M:iText.Pdf2Data.Util.Pair`2.ToString">
+            <summary>
+            <c>String</c> representation of this
+            <c>Pair</c>.
+            </summary>
+            <remarks>
+            <c>String</c> representation of this
+            <c>Pair</c>.
+            <para />
+            The default name/value delimiter '=' is always used.
+            </remarks>
+            <returns><c>String</c> representation of this <c>Pair</c></returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Util.Pair`2.GetHashCode">
+            <summary>Generate a hash code for this <c>Pair</c>.</summary>
+            <remarks>
+            Generate a hash code for this <c>Pair</c>.
+            <para />
+            The hash code is calculated using both the name and
+            the value of the <c>Pair</c>.
+            </remarks>
+            <returns>hash code for this <c>Pair</c></returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Util.SerializingUtil.Serialize(System.Object,System.IO.Stream)">
+            <exception cref="T:System.IO.IOException"/>
+        </member>
+        <member name="T:iText.Pdf2Data.Utils.JsonUtil">
+            <summary>Utility class for JSON serialization and deserialization operations. Not for public use.</summary>
+        </member>
+        <member name="M:iText.Pdf2Data.Utils.JsonUtil.AreTwoJsonObjectEquals(System.String,System.String)">
+            <summary>
+            Compares two json strings without considering the order of the elements.
+            </summary>
+            <param name="expectedString">expected json string</param>
+            <param name="toCompare">string for comparison</param>
+            <returns>true if two json string are equals, false otherwise</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Utils.JsonUtil.SerializeToString(System.Object)">
+            <summary>
+            Serializes passed object to JSON string.
+            </summary>
+            <param name="value">the object which will be serialized</param>
+            <returns>the JSON string representation of passed object or null if it is impossible to serialize to JSON</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Utils.JsonUtil.SerializeToMinimalString(System.Object)">
+            <summary>
+            Serializes passed object to minimal JSON string without spaces and line breaks.
+            </summary>
+            <param name="value">the object which will be serialized</param>
+            <returns>the minimal JSON string representation of passed object or null if it is impossible to serialize to JSON</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Utils.JsonUtil.DeserializeFromStream``1(System.IO.Stream)">
+            <summary>
+            Deserializes passed JSON stream to object with passed type.
+            </summary>
+            <param name="content">the JSON stream which represent object</param>
+            <param name="objectType">the type of object which will be deserialized</param>
+            <typeparam name="T">the type of object which will be deserialized</typeparam>
+            <returns>the deserialized object or null if operation of deserialization is impossible</returns>
+        </member>
+        <member name="M:iText.Pdf2Data.Utils.JsonUtil.DeserializeFromString``1(System.String)">
+            <summary>
+            Deserializes passed JSON string to object with passed type.
+            </summary>
+            <param name="content">the JSON string which represent object</param>
+            <param name="objectType">the type of object which will be deserialized</param>
+            <typeparam name="T">the type of object which will be deserialized</typeparam>
+            <returns>the deserialized object or null if operation of deserialization is impossible</returns>
+        </member>
+    </members>
+</doc>
